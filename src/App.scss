@@ -1,0 +1,34 @@
+$lighter-color: #E8DDCB;
+$light-color: #CDB380;
+$mid-color: #036564;
+$dark-color: #033649;
+$darker-color: #031634;
+
+$breakpoint-sm: 36em;
+$breakpoint-md: 48em;
+$breakpoint-lg: 60em;
+$breakpoint-xl: 72em;
+
+@import "reset";
+
+body {
+  color: $darker-color;
+  background-size: cover;
+  font-family: "Arial", sans-serif;
+  .content {
+    padding: .5rem;
+    background-color: rgba($lighter-color, .75);
+    box-shadow: 0 0 3rem 3rem rgba($lighter-color, .75);
+    max-width: $breakpoint-md;
+    margin: 0 auto;
+  }
+}
+
+// Routes
+@import "Routes/Home/home";
+@import "Routes/Lidl/lidl";
+@import "Routes/Maps/maps";
+
+// Components
+@import "Components/Header/header";
+@import "Components/Map/map";

@@ -1,0 +1,98 @@
+header {
+  background-color: $light-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 1rem .5rem;
+    a {
+      font-family: "Beleren Small Caps", sans-serif;
+      font-weight: 600;
+    }
+  }
+
+  button {
+    margin: .5rem .5rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .nav {
+      &.collapsed {
+        left: 100vw;
+        ul {
+          box-shadow: 0 0 5rem 5rem rgba(0, 0, 0, 0);
+        }
+      }
+      transition: all 300ms ease-in;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+
+      .spacer {
+        width: 20vw;
+        height: 100vh;
+        float: left;
+      }
+
+      ul {
+        display: block;
+        width: 80vw;
+        height: 100vh;
+        float: right;
+        background-color: $lighter-color;
+        text-align: right;
+        box-shadow: 0 0 5rem 5rem rgba(0, 0, 0, 0.5);
+        li {
+          &:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          font-size: 2rem;
+          a {
+            display: block;
+            padding: .2rem .5rem;
+          }
+          button {
+            margin: .2rem .5rem;
+            padding: .125rem .5rem;
+          }
+        }
+      }
+
+      @media (min-width: $breakpoint-sm) {
+        .spacer {
+          width: 50vw;
+        }
+        ul {
+          width: 50vw;
+        }
+      }
+    }
+  }
+  @media (min-width: $breakpoint-md) {
+    .nav-toggle {
+      display: none;
+    }
+    .nav {
+      .spacer {
+        display: none;
+      }
+      ul {
+        list-style: inherit;
+        li {
+          display: inline;
+          padding-right: 1rem;
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: $breakpoint-lg) {
+    justify-content: space-around;
+  }
+}

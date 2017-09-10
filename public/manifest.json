@@ -1,0 +1,15 @@
+{
+  "short_name": "Ustazia",
+  "name": "The Ustazia Compendium",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#031634",
+  "background_color": "#031634"
+}
