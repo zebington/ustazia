@@ -13,7 +13,20 @@ export default class Lidl extends Component {
         return <div>
             <Header/>
             <div className="content lidl">
-                <h2>We're currently sold out, check back soon.</h2>
+                <table>
+                    <thead><tr>
+                        <th className="name">Item</th>
+                        <th>Effect</th>
+                        <th className="cost">Cost</th>
+                    </tr></thead>
+                    <tbody>
+                    <tr>
+                        <td className="name">Test</td>
+                        <td>Test</td>
+                        <td className="cost">50</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     }
