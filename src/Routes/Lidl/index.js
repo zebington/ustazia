@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Header from '../../Components/Header';
 
 import bg from '../../res/img/bg_lidl.jpg';
+import {gql, graphql} from 'react-apollo';
 
-export default class Lidl extends Component {
+class Lidl extends Component {
     componentWillMount() {
         document.body.style.background = `url(${bg}) fixed top center`;
         document.body.style.backgroundSize = `cover`;
@@ -31,3 +32,13 @@ export default class Lidl extends Component {
         </div>
     }
 }
+
+const LidlQuery = gql`query allItems {
+  allItems(orderBy:cost_ASC) {
+    name
+    effect
+    cost
+  }
+}`;
+
+export default graphql(LidlQuery)(Lidl);
