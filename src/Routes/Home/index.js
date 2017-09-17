@@ -5,7 +5,7 @@ import bg from '../../res/img/bg.jpg';
 
 export default class Home extends Component {
     componentWillMount() {
-        document.body.style.background = `url(${bg}) fixed top right`;
+        document.body.style.background = `url(${bg}) top right`;
         document.body.style.backgroundSize = `cover`;
     }
 

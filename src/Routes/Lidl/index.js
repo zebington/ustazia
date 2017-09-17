@@ -7,7 +7,7 @@ import {gql, graphql} from 'react-apollo';
 
 class Lidl extends Component {
     componentWillMount() {
-        document.body.style.background = `url(${bg}) fixed top center`;
+        document.body.style.background = `url(${bg}) top center`;
         document.body.style.backgroundSize = `cover`;
     }
 

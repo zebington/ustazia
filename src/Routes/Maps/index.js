@@ -8,7 +8,7 @@ import worldmap from '../../res/img/map.jpg';
 
 export default class Maps extends Component {
     componentWillMount() {
-        document.body.style.background = `url(${bg}) fixed top center`;
+        document.body.style.background = `url(${bg}) top center`;
         document.body.style.backgroundSize = `cover`;
     }
 
