@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../../Components/Header';
+import v4 from 'uuid';
 
 import bg from '../../res/img/bg_lidl.jpg';
 import {gql, graphql} from 'react-apollo';
@@ -11,21 +12,30 @@ class Lidl extends Component {
     }
 
     render() {
+        let rows = null;
+        if (this.props.data.allItems) {
+            rows = this.props.data.allItems.map(item =>
+                <tr key={v4()}>
+                    <td className="name">{item.name}</td>
+                    <td>{item.effect}</td>
+                    <td className="cost">{item.cost}</td>
+                </tr>
+            );
+        }
+
         return <div>
             <Header/>
             <div className="content lidl">
                 <table>
-                    <thead><tr>
+                    <thead>
+                    <tr>
                         <th className="name">Item</th>
                         <th>Effect</th>
                         <th className="cost">Cost</th>
-                    </tr></thead>
-                    <tbody>
-                    <tr>
-                        <td className="name">Test</td>
-                        <td>Test</td>
-                        <td className="cost">50</td>
                     </tr>
+                    </thead>
+                    <tbody>
+                    {rows}
                     </tbody>
                 </table>
             </div>
@@ -41,4 +51,4 @@ const LidlQuery = gql`query allItems {
   }
 }`;
 
-export default graphql(LidlQuery)(Lidl);
+export default graphql(LidlQuery)(Lidl, {options: {fetchPolicy: 'cache-and-network'}});
