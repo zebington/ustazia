@@ -2,7 +2,6 @@
   "name": "ustazia",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zebington.github.io/ustazia",
   "dependencies": {
     "apollo-client": "^1.9.2",
     "node-sass": "^4.5.3",
