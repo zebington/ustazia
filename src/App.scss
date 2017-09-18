@@ -15,6 +15,7 @@ body {
   color: $darker-color;
   background-size: cover;
   font-family: "Arial", sans-serif;
+  min-height: 100vh;
   .content {
     padding: .5rem;
     background-color: rgba($lighter-color, .75);
